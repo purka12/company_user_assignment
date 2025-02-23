@@ -19,10 +19,6 @@ Backend: Node.js, Express.js
 Database: MongoDB Atlas (Cloud)
 
 
-**MongoDB Connection String (Atlas)
-
-mongodb+srv://companyuser:u6XnuCqiMxlXwUm0@company-user-db.mi6yw.mongodb.net/?retryWrites=true&w=majority&appName=company-user-db
-
 ** API Documentation (Postman)
 
 https://documenter.getpostman.com/view/42555707/2sAYdcrXns
