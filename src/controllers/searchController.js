@@ -1,8 +1,15 @@
-const searchService = require('../services/searchService');
+const searchService = require("../services/searchService");
 
-exports.search = async (req, res) => {
+const search = async (req, res) => {
     try {
-        const results = await searchService.search(req.query.query);
+        const { query } = req.query;
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const sortField = req.query.sortField || "name";
+        const sortOrder = req.query.sortOrder || "asc";
+
+        const results = await searchService.search(query, page, limit, sortField, sortOrder);
+
         res.status(200).json({
             status: 200,
             message: "Search results fetched successfully",
@@ -15,3 +22,5 @@ exports.search = async (req, res) => {
         });
     }
 };
+
+module.exports = { search };
